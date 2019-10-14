@@ -50,6 +50,7 @@ export default {
     'bootstrap-vue/nuxt',
 
     // Doc: https://axios.nuxtjs.org/usage
+    'nuxt-tslint',
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
   ],

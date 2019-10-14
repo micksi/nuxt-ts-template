@@ -11,17 +11,17 @@
 </template>
 
 <script lang="ts">
-import { createComponent, reactive } from '@vue/composition-api'
+import { createComponent, reactive } from '@vue/composition-api';
 
 export default createComponent({
   setup() {
-    const message = reactive('This is not a message')
+    const message = reactive('This is not a message');
 
     return {
       message
-    }
+    };
   }
-})
+});
 </script>
 
 <style>
