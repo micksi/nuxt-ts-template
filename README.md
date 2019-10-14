@@ -1,6 +1,6 @@
-# vo-client
+# Nuxt-ts
 
-> My premium Nuxt.js project
+Nuxt template with PWA, Typescript, Bootstrap-vue, composition-api and ts-jest
 
 ## Build Setup
 
