@@ -53,6 +53,9 @@ export default {
     'nuxt-tslint',
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
+
+    // enable css preprocessor
+    '@nuxtjs/style-resources ',
   ],
   /*
   ** Axios module configuration
