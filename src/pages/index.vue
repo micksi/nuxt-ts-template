@@ -1,5 +1,5 @@
 <template>
-  <div class="row justify-content-center align-items-center">
+  <div class="row d-inline-block justify-content-center align-items-center">
     <div class="frame">
       <div class="window" @click="openLeft = !openLeft">
         <div class="front-back" :class="{'open-left': openLeft }"></div>
@@ -37,10 +37,13 @@ export default createComponent({
 
 <style lang="scss">
 :root {
-  --window-height: 600px;
-  --window-width: 600px;
+  --window-height: 400px;
+  --window-width: 400px;
 }
+
 .present {
+  position: relative;
+  z-index: -10;
   margin-top: calc(var(--window-height) * -1);
   width: var(--window-width);
   height: var(--window-height);
@@ -49,8 +52,8 @@ export default createComponent({
   .content {
     height: 100%;
     width: 100%;
-    padding-top: 90px;
-    padding-right: 60px;
+    padding-top: 30px;
+    padding-right: 20px;
     padding-left: 0px;
     img {
       max-width: 100%;
