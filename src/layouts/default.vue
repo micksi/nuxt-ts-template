@@ -1,55 +1,40 @@
 <template>
   <div>
-    <nuxt />
+    <div class="wrapper">
+      <div class="background blur"></div>
+    </div>
+    <div class="container">
+      <nuxt />
+    </div>
   </div>
 </template>
 
-<style>
-html {
-  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
+<style scoped>
+.container {
+  z-index: 1;
+  font-family: "Open sans", sans-serif;
 }
 
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  margin: 0;
+.wrapper {
+  z-index: -9999;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  display: block;
+  overflow: hidden;
 }
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
+.background {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-image: url("https://www.yourirish.com/wp-content/uploads/2013/11/feature-christmas-777x437.png");
 }
 
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
+.blur {
+  filter: blur(10px);
+  transform: scale(1.1);
+  margin: 0px;
 }
 </style>
