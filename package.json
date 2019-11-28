@@ -1,7 +1,7 @@
 {
-  "name": "vo-client",
+  "name": "jule-kalender",
   "version": "1.0.0",
-  "description": "Virksomhedsoverblik klient",
+  "description": "Josefines julekalender",
   "author": "Mick Neupart",
   "private": true,
   "scripts": {
