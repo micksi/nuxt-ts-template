@@ -31,8 +31,18 @@
         :style="{'display': openLeft && openRight ? 'inline-block':'none'}"
         :class="{'fade-in': openLeft && openRight}"
       >
-        <strong>Glædelig første advent <3</strong>
+        <strong>Glædelig første advent</strong>
       </h1>
+    </div>
+    <div class="winter-is-coming">
+      <div class="snow snow--near"></div>
+      <div class="snow snow--near snow--alt"></div>
+
+      <div class="snow snow--mid"></div>
+      <div class="snow snow--mid snow--alt"></div>
+
+      <div class="snow snow--far"></div>
+      <div class="snow snow--far snow--alt"></div>
     </div>
   </div>
 </template>
@@ -54,6 +64,9 @@ export default createComponent({
 
 <style scoped lang="scss">
 @import "@/assets/_variables.scss";
+h1 {
+  font-family: "Mountains of Christmas", cursive;
+}
 
 .frame {
   display: flex;
@@ -153,6 +166,78 @@ export default createComponent({
   to {
     -webkit-transform: perspective(0) rotateY(90deg);
     -webkit-transform-origin: 100% 100%;
+  }
+}
+
+$s--near: 10s;
+$s--mid: ($s--near * 2);
+$s--far: ($s--near * 3);
+
+$ease--out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+%on-top {
+  z-index: 100;
+  pointer-events: none;
+}
+
+.winter-is-coming {
+  @extend %on-top;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+}
+
+.snow {
+  @extend %on-top;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  animation: falling linear infinite both;
+  transform: translate3D(0, -100%, 0);
+
+  &--near {
+    animation-duration: $s--near;
+    background-image: url("https://dl6rt3mwcjzxg.cloudfront.net/assets/snow/snow-large-075d267ecbc42e3564c8ed43516dd557.png");
+    background-size: contain;
+
+    & + .snow--alt {
+      animation-delay: ($s--near / 2);
+    }
+  }
+
+  &--mid {
+    animation-duration: $s--mid;
+    background-image: url("https://dl6rt3mwcjzxg.cloudfront.net/assets/snow/snow-medium-0b8a5e0732315b68e1f54185be7a1ad9.png");
+    background-size: contain;
+
+    & + .snow--alt {
+      animation-delay: ($s--mid / 2);
+    }
+  }
+
+  &--far {
+    animation-duration: $s--far;
+    background-image: url("https://dl6rt3mwcjzxg.cloudfront.net/assets/snow/snow-small-1ecd03b1fce08c24e064ff8c0a72c519.png");
+    background-size: contain;
+
+    & + .snow--alt {
+      animation-delay: ($s--far / 2);
+    }
+  }
+}
+
+@keyframes falling {
+  0% {
+    transform: translate3D(-7.5%, -100%, 0);
+  }
+
+  100% {
+    transform: translate3D(7.5%, 100%, 0);
   }
 }
 </style>
