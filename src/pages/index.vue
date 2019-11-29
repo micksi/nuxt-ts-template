@@ -185,9 +185,9 @@ $ease--out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   overflow: hidden;
   position: absolute;
   top: 0;
-  height: 100%;
-  width: 100%;
-  max-width: 100%;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
 }
 
 .snow {
